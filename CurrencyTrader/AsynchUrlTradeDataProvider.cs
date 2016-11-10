@@ -4,20 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CurrencyTrader
+namespace CurrencyTrader.Contracts
 {
     class AsynchUrlTradeDataProvider : ITradeDataProvider
     {
         private readonly String url;
         UrlTradeDataProvider synchTradeProvider;
-        public AsynchUrlTradeDataProvider(String url)
+        static TradeDataUpdate tradeUpdater;
+        public AsynchUrlTradeDataProvider(String url, TradeUpdater)
         {
             this.url = url;
             synchTradeProvider = new UrlTradeDataProvider(url);
         }
         public IEnumerable<string> GetTradeData()
         {
-            Task.Run() => synchTradeProvider.GetTradeData();
+            //  Task.Run() => synchTradeProvider.GetTradeData();
+            WebClient clint = new WebClient();
+            Uri uri = new Uri(url);
+            client.DownloadStringCompleted += DownloadString Completed;
+            client.DownloadStringAsync(new Uri(url));
+        }
+        static void DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
+        {
+            string[] lines = e.Result.Split(new string[] {Environment.NewLine}
+               
         }
     }
 }

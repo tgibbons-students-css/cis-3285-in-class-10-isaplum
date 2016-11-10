@@ -41,11 +41,13 @@
   <ItemGroup>
     <Compile Include="ILogger.cs" />
     <Compile Include="ITradeDataProvider.cs" />
+    <Compile Include="ITradeDataUpdate.cs" />
     <Compile Include="ITradeMapper.cs" />
     <Compile Include="ITradeParser.cs" />
     <Compile Include="ITradeStorage.cs" />
     <Compile Include="ITradeValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TradeDataUpdate.cs" />
     <Compile Include="TradeRecord.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
