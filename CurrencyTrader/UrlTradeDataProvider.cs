@@ -10,11 +10,8 @@ namespace CurrencyTrader
     public class UrlTradeDataProvider : ITradeDataProvider
     {
         private readonly String url;
-
-        public UrlTradeDataProvider(String url)
-        {
-            this.url = url;
-        }
+      
+ 
 
         public IEnumerable<string> GetTradeData()
         {
